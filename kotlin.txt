@@ -1,0 +1,945 @@
+
+Lecture 1:
+
+//Var vs Val
+var = can be changed
+val = cant be changed
+
+fun main(){
+
+
+//Variable initializations
+var  name= "Ali"
+var name_2 : String = "Ahmed"
+var Float: Float = 13.2F
+
+
+//printing
+println("Name = "+ name )
+println("Hello world!")
+
+
+**can also use boolean and double
+
+//Boolean
+var isSunny = true
+isSunny = false (it will auto catch boolean or you can define)
+
+
+//Char
+var character = 'A'
+var caharacter : Char = 'A'
+
+
+//String
+var myStr = "Hello World"
+var firstCharInStr = myStr[0]
+var lastString = myStr[myStr.length-1]
+
+
+//Concate remover $
+print("First character is $firstCharInStr and the length of the string is ${myStr.length}")
+
+}
+
+
+Lecture 2:
+----------
+
+fun main(){
+//Arithmetic operators
+working same as they work in java (+,-,/,*,%)
+* int ki int sa division pr int hi ata however if want to divide a double by int then jaha store krrhe wo double type ka hona chaiye
+
+
+//comparision operators 
+SAME AS JAVA ONE
+( ==, != , <, >, <=, >= )
+also ham aisa bhi check krska num without if else
+val isEqual = 5==3
+print("isEqual is $isEqual")
+
+output: false
+
+
+also in print one
+print("is equal ${ 5 ==3 }")
+
+
+//Assignment operator
+SAME AS JAVA
+(+= , /= ,-= , *= , %=)
+
+}
+
+
+
+LECTURE 3:
+----------
+
+//Conditional Statements
+same as java like If else ,else if
+
+//When Expression
+
+A replacement of switch statement
+switch is like
+number =3 
+
+
+switch (number){
+case 1:
+//code
+case 2:
+//code
+case 3:
+//code
+
+default:
+//code
+}
+
+
+when(number){
+
+1 -> print("Hello")
+2 -> print("World")
+
+//for multiline case 
+3 -> {
+	print("final")
+}
+
+
+//for default
+
+else -> print("Invalid good bye!!!")
+
+}
+
+
+ANOTHER USE OF WHEN
+
+
+month =4
+
+when(month){
+	in 3..5 -> println("Spring")
+	in 6..9 -> println("Autumn")
+	!in 6..9 -> println("Autumn")
+
+	else -> println("Good bye!!")
+}
+
+
+
+ANOTHER CASE OF WHEN
+
+
+var x : Any = 13.5 //Any = any type
+when(x){
+
+	is Int -> println("$x is Int")
+	is Double -> println ("$x is Double")
+}
+
+
+
+
+
+LECTURE 4 :
+-----------
+
+
+LOOPING
+
+WHILE LOOP
+==========
+SAME AS JAVA 
+WHILE(CONDITION){//CODE}
+
+
+DO WHILE LOOP
+=============
+SAME AS JAVA
+
+DO{
+
+}WHILE(CONDTION)
+
+
+
+
+FOR LOOP
+========
+
+
+for (num in 1..10)
+{
+	print("Hello")
+}
+
+for (i in 1 until 10)
+{
+	print("Hello")
+}
+
+
+for decrement
+for (i in 10 downTo 1)
+{
+	print("$i  ")
+}
+
+for (i in 10 downTo 1 step 2)
+{
+	print("$i  ")
+}
+
+output = 10 8 6 4 2
+
+
+
+
+
+BREAK AND CONTINUE
+------------------
+
+break : to jump out of for loop
+
+for (i in 1 until 20)
+{
+	print("$i ")
+	if(1/2 ==5){
+		break
+	}
+}
+output = 12345678910
+
+
+
+continue : to jump out of that specific condition
+
+for (i in 1 until 20)
+{
+	print("$i ")
+	if(1/2 ==5){
+		continue
+	}
+}
+output = 123456789_11 12 13 14 15 16 17 18 19
+
+
+
+
+FUNTIONS:
+---------
+
+fun main(){
+	myFunction()
+	var c = myFunc(5,3)
+}
+
+
+//fully void funtion
+fun myFunction(){
+	print("Called from myFuncton")
+}
+
+
+//arguments with return type
+fun myFunc(a : Int , b : Int) : Int {
+	
+	return a+b
+}
+
+
+NULLABLES:
+----------
+
+var name :String = "Denis"
+name= null //cant assign like if it has initialized
+
+
+var nullableName:String? = "Denis"
+nullableName= null // ? just omit the denis and 
+make that empty so that null can be setted to name
+
+
+OR
+var nullableName:String? = null
+
+val name = nullableName?: "Guest"
+
+//it means if there is no assignment to nullable name than assign guest
+
+//?: alvis operator
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------
+CLASSES: OOP
+-----------------------------------------------
+class person constructor(firstname: String , lastName:String){
+
+}
+
+
+or you can directly define a constructor here
+
+class person(firstname: String , lastName:String){
+
+}
+
+
+initilize from main fun
+
+fun main(){
+
+	person(denis,alam)
+
+to initilize object name
+	var obj = person(denis,alam)
+
+}
+
+
+///////////////////////////////////////
+
+
+
+class person(firstname: String , lastName:String){
+
+	init{
+		print("init is just a default 		constructor/ initializer for 		object")
+
+		print("$frstname, $lastName")
+	}
+
+}
+
+
+
+//you can give default values as well
+
+class person(firstname: String = "khizar" , lastName:String = "alam"){
+
+	init{
+		print("init is just a default 		constructor/ initializer for 		object")
+
+		print("$firstname, $lastName")
+	}
+}
+
+
+
+----------------------------------------
+SCOPE AND SHADOWING
+----------------------------------------
+
+//a=5---->
+fun myFun(a:Int){
+	a = 5 // This is wrong you cant assign 	a funtion arameter within a funtion
+
+	var a = a //this is correct 
+	//here 5 will print
+}
+
+this concept is scope and shadowing
+
+
+
+
+---------------------------------------------
+MEMBER VARIABLE - FUCTIONS AND CONSTRUCTORS
+---------------------------------------------
+
+fun main (){
+
+	var obj1 = person("khizar","Alam")
+	obj1.hobby
+}
+
+
+class person(firstname: String = "khizar" , lastName:String = "alam"){
+
+//MEMBER VARIABLE
+	var AGE : Int? = null // fornullability
+
+
+//MEMBER FUNCTIONS
+	fun Hobby(){
+		print("My hobby")
+	}
+
+
+
+//MEMBER SECONDARY CONSTRUCTOR
+	CONSTRUCTOR(firstname: String , 	lastName:String)
+		:this(firsname,lastname)
+{
+this.age= age
+}	
+
+
+	init{
+		print("init is just a default 				constructor/ initializer for 				object")
+
+		print("$firstname, $lastName")
+	}
+}
+
+-------------------------------
+LATE INIT AND GETTER AND SETTERS
+-------------------------------
+ 
+lateinit means you ust name the variable and will initialize the variable later on
+basically uninitialized hota ha so is ka liya init use krskta
+
+fun main(){
+
+	var obj = car()
+	obj.owner
+}
+
+class car(){
+
+	lateinit var owner: String
+
+	init{
+		this.owner = "frank"
+	}
+
+
+/***************/
+
+
+	val myBrand:String = "BMW"
+	get(){
+		return field.lowercase()
+	}
+//when some one will aceess myBrand it will show him lower Case version
+
+
+
+}
+
+
+
+
+--------------------------------------------
+DATA CLASS
+--------------------------------------------
+//data class cant be open,abstract etc
+
+
+data class user(val id: Long, val name:String)
+
+fun main(){
+	val user1 = user(1,"Denis")
+	println("${user1.name}")
+}
+
+
+-----------------------------------------------
+INHERITANCE
+-----------------------------------------------
+
+//inorder to make a class inheritable 'open' data-type should be used
+
+open class vehicle(){
+
+
+}
+
+
+open class car : vehicle(){
+
+}
+
+
+open ElectricCar: car(){
+
+}
+
+-------------------------------------------
+
+open class car(val name:String , val brand;String){
+	var range:Double =0.0
+
+	fun extendRange(amount:Double){
+		if(amount>0){
+			range+=amount
+		}
+	}
+
+	fun drived(distance:Double){
+		print("Dstance distance")
+		}
+}
+
+
+open ElectricCar(name:String , brand:String, battery:Double): car(name,brand){
+	
+
+
+
+//for override
+override fun drived(distance:Double){
+		print("Dstance distance")
+		}
+}
+
+
+
+fun main (){
+
+var myCar =car("A3","Audi")
+var myEcar = ElectricCar,
+}
+
+--------------------------------------------
+INTERFACES
+--------------------------------------------
+interface drivable{
+	val maxSpeed: Double
+	fun drive(): String
+	fun brake(){
+		println("The Drivable braking")
+	}
+
+}
+
+
+open class car(override val maxSpeed: Double, val name:String , val brand:String) : drivable{
+	
+	var range:Double =0.0
+
+	fun extendRange(amount:Double){
+		if(amount>0){
+			range+=amount
+		}
+	}
+
+	
+///
+
+override fun drive():String{
+	return "Driving the inerface drive"
+}
+
+
+//
+	fun drived(distance:Double){
+		print("Dstance distance")
+		}
+}
+
+
+----------------------------------------------
+ABSTRACT CLASS
+----------------------------------------------
+
+abstract class mammal(private val name:String){
+	abstract var maxSpeed:Double
+	abstract fun run()
+	abstract fun breath()
+
+	fun (){
+
+	}
+}
+
+
+the all java concept
+
+
+
+----------------------------------------------
+TYPECASTING
+----------------------------------------------
+val stringList: List<String> = listOf("D","F","M","G")
+
+
+
+
+
+-----------	ADVANCE	--------------------
+
+Array
+-----
+
+fun main(){
+
+val numbers :IntArray = intArrayOf(1,2,3,4,5,6)
+or
+val numbers  = arrayOf(1,2,3,4,5,6)
+
+	for (i in numbers){
+		print(i)
+
+	}
+
+//if not work with print then use numbers.contentToString()
+
+}
+
+example
+data class Fruit(val name: String, val price: Double)
+
+
+fun main(){
+
+val fruits= arrayOf(Fruit("Apple",12), Fruit("Mango",13))
+
+	for (i in fruits.indices){
+		print("${fruits[index].name} is in index $index")
+	}
+
+//if not work with print then use numbers.contentToString()
+
+}
+
+
+
+LISTS
+------------------------------
+
+
+fun main (){
+
+	val months= listOf("January","Febraury","March")
+	val anyType= listOf(1,2,3,true,false,"String")
+
+
+	print(anyType.size)
+	print(months[1])
+	
+	for(i in months){
+		print(month)
+	}
+
+//YOU CANT ADD ITEMS TO A LIST IF WANT TO CONVERT IT INTO MUTABLE LIST
+
+
+	val additionalMonths = months.toMutableList()
+	val newMonthhs = arrayOf("April","May","June")
+	addtionalMonths.addAll(newMonths)
+	print(additionalMonths)
+	
+	or
+	
+	addtionalMonths.add("Add")
+
+//IF DIRECTLY WANT TO MAKE A LIST MUTABLE
+
+	val days = mutableListOf<String>("hello","HI")
+	days.add("how are you")
+	print(days)
+
+	days.removeAt(1)
+	print(days)
+
+	days.removeAll(pass list)
+	
+}
+
+
+
+SETS AND MAPS:
+--------------------------------
+
+sets are the type of collection tat eliminates duplicate data. its is unsorted
+
+fun main(){
+
+	val fruits= setOf("Apple","Orange","Apple","Mango")
+	print(fruits)
+	output:apple,mango,orange -> skips duplicate
+
+	print(fruit.size)
+	output:3
+
+
+	val daysOfTheWeek = mapOf(1 to "Monday", 2 to "Tuesday", 3 to "Wednesday")
+	print(daysOfWeek[2])
+
+or
+	for(i in dayOftheWeek.i){
+		print(i)
+	}
+	
+
+}
+
+
+ArrayList:
+-------------------------------------
+
+same as java
+can be mutable
+can add remove get etc like java
+
+
+
+LAMBDA EXPRESSIONS
+----------------------------------------
+
+
+Lambda is function that has no name
+anonymous functions
+
+noraml dunction
+fun add(a:Int , b:Int){
+	val add= a+b
+}
+
+
+Lambda function
+val sum:(Int,Int)-> = {a:Int,b:Int->a+b}
+
+
+
+VISIBILIT/ACCESS MODIFIER
+-------------------------------
+
+-keywords to retrict the use of class , interface , methods etc
+-can be used at multiple places such as class header or method body
+-four types
+	+public
+		default public
+		public fun hello(){}
+
+	+private
+		can access only in class
+		private class example{
+			private val a:Int
+		}
+
+	+protected
+			same as java
+			open class base{protected val i=0}
+			class derived:Base(){
+				fun getValue(): Int{
+					return i
+				}
+			}		
+
+	+internal
+		available in kotlin but not in java.
+		makes the field visible only inside the module in which its is 		implemented
+		can be accessed only inside the module.
+		internal class example{
+
+		}
+
+NESTED CLASS AND INNER CLASS:
+-------------------------------------------
+
+
+nested class : class in a class
+		in kotlin its default static. so member can be accessed without 		creating the object of the class
+
+		BUT nested class cannot access the outer class members.
+
+		class outerClass{
+			private var name:String = "Mr X"			
+
+			class Nested{
+			
+
+			}
+		}
+
+
+
+
+Inner class : A class which is created inside another class with keyword inner.
+		basically a nested one but with inner data type
+
+		cannt declare in interfaces or non inner class
+
+		can access outer class members
+
+
+		class OUTER_CLASS{
+			inner class INNER_CLASS{
+
+			}		
+		}
+
+
+SAFE CAST AND UNSAFE CAST:
+------------------------------------------------------
+
+Unsafe cast:
+------------
+
+when there is not possible to cast a vaiable and it throws an exception, this is called an unsafe  cast.
+
+It is performed by infix operator 'as'
+
+
+- Example
+	A nullable string (String?) canno be cast to non nullable string (String), this throws an exception. 
+
+ 
+fun main (args:Array<String>){
+
+	val obj:Any?= null
+	val str: String = obj as String
+	print(str)
+
+//here we will get an exception  so
+//GEENREATE A CLASS CAST EXCEPTION  means fix a int to any al that lead to classcast Exception
+
+
+val obj:Any = 123
+val str: String = obj as String
+
+
+}
+
+
+
+String-String example
+
+
+un main (args:Array<String>){
+
+	val obj:Any?= "String Unsafe cast"
+	val str: String = obj as String
+	print(str)
+}
+
+
+output: It will work and will print String Unsafe cast
+
+
+-----------------------------------
+EXCEPTION HANDLING:
+-----------------------------------
+
+ARRAY OUT OF BOUND
+ARITHMETIC BOUD ETC
+
+
+check exception: check on compile time (I/O, sql exception)
+uncheck exceptions : check on run time (Like divided by zero)
+
+TRY AND CATCH: try{}catch(e: some exception)
+FINALLY : work as default means always excute wehter exception is or isn't
+THORW : throw exception expplicitly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
